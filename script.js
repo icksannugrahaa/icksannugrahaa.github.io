@@ -1,10 +1,9 @@
-// Smooth Scroll for Scroll-to-Top Button
 document.addEventListener("DOMContentLoaded", () => {
     const scrollBtn = document.getElementById("scroll-top");
     const themeToggle = document.getElementById("theme-toggle");
     let darkMode = false;
 
-    // Show scroll button when user scrolls down
+    // Show Scroll-to-Top button on scroll
     window.addEventListener("scroll", () => {
         if (window.scrollY > 200) {
             scrollBtn.style.display = "block";
@@ -18,7 +17,7 @@ document.addEventListener("DOMContentLoaded", () => {
         window.scrollTo({ top: 0, behavior: "smooth" });
     });
 
-    // Toggle theme
+    // Toggle Dark Mode
     themeToggle.addEventListener("click", () => {
         darkMode = !darkMode;
         document.body.classList.toggle("dark-mode", darkMode);
