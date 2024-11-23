@@ -1,19 +1,70 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background: #f4f4f9;
+    color: #333;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
 /* Smooth Scroll */
 html {
     scroll-behavior: smooth;
 }
 
+/* Header */
+.header {
+    background: linear-gradient(135deg, #6a11cb, #2575fc);
+    color: white;
+    text-align: center;
+    padding: 80px 20px;
+}
+
+.header h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+}
+
+.header p {
+    font-size: 1.25rem;
+    margin-bottom: 20px;
+}
+
+.header .btn {
+    display: inline-block;
+    background: white;
+    color: #2575fc;
+    padding: 10px 20px;
+    border-radius: 25px;
+    font-size: 1rem;
+    font-weight: bold;
+    text-decoration: none;
+    transition: background 0.3s, color 0.3s;
+}
+
+.header .btn:hover {
+    background: #ddd;
+    color: #1b4d8c;
+}
+
 /* Navbar */
 .navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background: #2575fc;
-    padding: 10px 20px;
-    color: #fff;
     position: sticky;
     top: 0;
     z-index: 10;
+    background: #2575fc;
+    color: white;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .navbar ul {
@@ -23,11 +74,11 @@ html {
 }
 
 .navbar ul li {
-    display: inline;
+    font-size: 1rem;
 }
 
 .navbar ul li a {
-    color: #fff;
+    color: white;
     text-decoration: none;
     transition: color 0.3s;
 }
@@ -36,13 +87,104 @@ html {
     color: #ddd;
 }
 
-/* Theme Toggle */
 #theme-toggle {
     background: none;
     border: none;
-    color: #fff;
-    font-size: 20px;
+    color: white;
+    font-size: 1.5rem;
     cursor: pointer;
+    transition: color 0.3s;
+}
+
+#theme-toggle:hover {
+    color: #ddd;
+}
+
+/* Sections */
+section {
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.container {
+    width: 90%;
+    max-width: 1100px;
+    margin: auto;
+}
+
+h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #2575fc;
+}
+
+/* About Section */
+.about p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    line-height: 1.8;
+    color: #555;
+}
+
+/* Skills Section */
+.skills .skill-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 20px;
+}
+
+.skills .skill-grid span {
+    display: inline-block;
+    background: #2575fc;
+    color: white;
+    padding: 10px;
+    border-radius: 8px;
+    font-size: 1rem;
+    text-align: center;
+    transition: transform 0.3s, background 0.3s;
+}
+
+.skills .skill-grid span:hover {
+    transform: translateY(-5px);
+    background: #1b4d8c;
+}
+
+/* Experience Section */
+.experience .job {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.experience h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.experience ul {
+    margin-left: 20px;
+    text-align: left;
+    color: #555;
+}
+
+.experience ul li {
+    list-style: disc;
+    margin-bottom: 5px;
+}
+
+/* Contact Section */
+.contact p {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+.contact a {
+    color: #2575fc;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.contact a:hover {
+    text-decoration: underline;
 }
 
 /* Scroll-to-Top Button */
@@ -52,24 +194,41 @@ html {
     right: 20px;
     display: none;
     background: #2575fc;
-    color: #fff;
+    color: white;
     border: none;
     padding: 10px 15px;
     border-radius: 50%;
     cursor: pointer;
-    font-size: 16px;
+    font-size: 1.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    transition: background 0.3s, transform 0.3s;
 }
 
 #scroll-top:hover {
     background: #1b4d8c;
+    transform: translateY(-5px);
 }
 
-/* Hover Animation for Skills */
-.skill-grid span {
-    transition: transform 0.3s ease, background 0.3s ease;
+/* Dark Mode */
+body.dark-mode {
+    background: #1b1b2f;
+    color: #f5f6fa;
 }
 
-.skill-grid span:hover {
-    transform: scale(1.1);
-    background: #1b4d8c;
+body.dark-mode section {
+    background: #1b1b2f;
+    color: #f5f6fa;
+}
+
+body.dark-mode .navbar {
+    background: #222831;
+}
+
+body.dark-mode #scroll-top {
+    background: #f5f6fa;
+    color: #222831;
+}
+
+body.dark-mode #scroll-top:hover {
+    background: #dcdde1;
 }
